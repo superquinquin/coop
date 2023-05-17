@@ -1,0 +1,14 @@
+[(#REM)
+Squelette Presentation resumee d'un article dans une liste
+Distribue sous licence GPL
+]
+<BOUCLE_article(ARTICLES){id_article}{statut?}>
+<article>
+    <a href="#URL_ARTICLE" class="image">[(#LOGO_ARTICLE_RUBRIQUE|html5up_image_reduire{416,256})]</a>
+    [<h3[(#ENV{affichertitre}|=={non}|oui) class="offscreen"]>(#TITRE)</h3>]
+    [<p>(#INTRODUCTION|couper{#ENV{coupe,150}})</p>]
+    <ul class="actions[(#ENV{afficherlien}|=={non}|oui) offscreen]">
+        <li><a href="#URL_ARTICLE" class="button"><:zcore:voir:></a></li>
+    </ul>
+</article>
+</BOUCLE_article>

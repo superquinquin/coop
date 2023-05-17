@@ -1,0 +1,10 @@
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+<BOUCLE_srubriques(RUBRIQUES){id_parent}{par num titre, titre}>
+#SET{listearticles#ID_RUBRIQUE,non}
+<BOUCLE_test_articles(ARTICLES){id_rubrique}{1,2}>
+</BOUCLE_test_articles>#SET{listearticles#ID_RUBRIQUE,oui}</B_test_articles>
+<li>
+    <a href="#URL_RUBRIQUE"[(#EXPOSE|ou{#ENV{rubrique_on}|=={#ID_RUBRIQUE}}|oui) class="on"]>#TITRE</a>
+</li>
+</BOUCLE_srubriques>
+</BOUCLE_rubrique>
