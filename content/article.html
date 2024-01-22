@@ -1,0 +1,31 @@
+<BOUCLE_article(ARTICLES){id_article}>
+<section class="sqq-article">
+	<header class="main">
+		[<p class="surtitre #EDIT{surtitre}">(#SURTITRE)</p>]
+		[<h1 class="titre #EDIT{titre}">(#TITRE)</h1>]
+		[<p class="soustitre #EDIT{soustitre}">(#SOUSTITRE)</p>]
+		[<div class="image main">
+			(#LOGO_ARTICLE|html5up_image_reduire{1310,425})
+		</div>]
+		<B_mots>
+		<nav>
+			<ul class="menu-items">
+			<BOUCLE_mots(MOTS){id_article}> <li class="item"><a href="#URL_MOT" class="button small">#TITRE</a></li> </BOUCLE_mots>
+			</ul>
+		</nav>
+		</B_mots>
+	</header>
+
+	[<div class="chapo #EDIT{chapo}">(#CHAPO|adaptive_images{1280})</div>]
+	[<div class="texte #EDIT{texte}">(#TEXTE|adaptive_images)</div>]
+	[<div class="ps #EDIT{ps}">(#PS|adaptive_images)</div>]
+	[<div class="notes">(#NOTES)</div>]
+
+	<INCLURE{fond=inclure/documents,id_article,id_rubrique=#NULL,ajax,env} />
+
+	<INCLURE{fond=inclure/forum,id_article} />
+	[<h2 class="forum-titre"><:forum:form_pet_message_commentaire:></h2>
+	(#FORMULAIRE_FORUM)]
+
+</section>
+</BOUCLE_article>

@@ -1,6 +1,61 @@
-.accueil {
-}
-
-.sqq-form-progress {
+@media screen and (max-width: 767px){
 
 }
+
+@media screen and (max-width: 980px){
+
+}
+
+@media screen and (max-width: 1680px){
+
+}
+
+/** Fil d'ariane **/
+
+nav.arbo {
+    margin-top: 8px;
+}
+
+/** Tite **/
+
+#header .logo {
+    font-family: "Trebuchet MS", sans-serif;
+    color: #e4c74d;
+}
+
+/** Rubrique **/
+
+@media screen and (max-width: 1680px) {
+    .sqq-rubrique .texte {
+        font-size: 1.3em;
+    }
+
+    .sqq-rubrique .main h1,
+    .sqq-article .main h1 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 980px){
+    .sqq-rubrique .texte {
+        font-size: 1.2em;
+    }
+
+    .sqq-rubrique .main h1,
+    .sqq-article .main h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (max-width: 736px){
+    .sqq-rubrique .texte {
+        font-size: 1.1em;
+    }
+
+    .sqq-rubrique .main h1,
+    .sqq-article .main h1 {
+        font-size: 1.4em;
+    }
+}
+
+

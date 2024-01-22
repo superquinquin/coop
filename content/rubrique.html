@@ -1,0 +1,17 @@
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+<section class="sqq-rubrique">
+	<header class="main">
+		[<h1 class="#EDIT{titre}">(#TITRE)</h1>]
+	</header>
+	[<div class="texte #EDIT{texte}">(#TEXTE|adaptive_images)</div>]
+	[<div class="notes">(#NOTES)</div>]
+
+	<INCLURE{fond=inclure/documents,id_rubrique,ajax,env} />
+</section>
+[<section>[(#REM) garder la section ici pour eviter de la mettre dans une div ajaxee -> perte de la mise en forme]
+	(#INCLURE{fond=inclure/liste/articles,id_rubrique,ajax,env,parpage=12})
+</section>]
+[<section>
+	(#INCLURE{fond=inclure/liste/rubriques,id_rubrique,ajax,env,parpage=6})
+</section>]
+</BOUCLE_rubrique>

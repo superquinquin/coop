@@ -1,0 +1,12 @@
+<BOUCLE_hero(ARTICLES){id_article}>
+<div class="content">
+	<header>
+		[<h1 class="#EDIT{titre}">(#TITRE)</h1>]
+		[<p class="#EDIT{soustitre}">(#SOUSTITRE)</p>]
+	</header>
+	[<p>(#INTRODUCTION|couper{300})</p>]
+</div>
+[<span class="image object">
+	(#LOGO_ARTICLE|html5up_image_reduire{800,600})
+</span>]
+</BOUCLE_hero>
