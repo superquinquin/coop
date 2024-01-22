@@ -16,7 +16,7 @@ nav.arbo {
     margin-top: 8px;
 }
 
-/** Tite **/
+/** Title **/
 
 #header .logo {
     font-family: "Trebuchet MS", sans-serif;
@@ -56,6 +56,21 @@ nav.arbo {
     .sqq-article .main h1 {
         font-size: 1.4em;
     }
+}
+
+/** Formulaires **/
+
+label {
+    margin: 0
+}
+
+.saisie_input,
+.saisie_email,
+.saisie_fichiers,
+.saisie_textarea,
+.saisie_checkbox,
+.choix {
+    margin-bottom: 1.2em;
 }
 
 
