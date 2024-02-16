@@ -60,8 +60,9 @@ nav.arbo {
 
 /** Formulaires **/
 
-label {
-    margin: 0
+label,.label{
+    margin: 0;
+    font-size: 1em;
 }
 
 .saisie_input,
@@ -72,6 +73,11 @@ label {
 .saisie_checkbox,
 .choix {
     margin-bottom: 1.2em;
+}
+
+.saisie_radio .label{
+    font-weight: 600;
+    color: #3d4449;
 }
 
 
