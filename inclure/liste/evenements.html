@@ -24,16 +24,5 @@
         </B_agenda>
         <p class="aucun-resultat"><:agenda:info_aucun_evenement:></p>
     <//B_agenda>
-    [(#ENV{accueil}|!={oui}|oui)
-    <p class="boutons">
-        [(#ENV{archives}|!={oui}|?{
-        <a href="[(#SELF|parametre_url{archives,oui})]" class="ajax button"><span><:html5up:evenements_a_venir:></span></a>
-        ,
-        <a href="[(#SELF|parametre_url{archives,''})]" class="ajax button"><span><:html5up:evenements_passes:></span></a>
-        })]
-    </p>]
     </div>
-    [(#ENV{accueil}|=={oui}|oui)
-    <p class="boutons"><a href="#URL_PAGE{evenements}" class="button primary"><:html5up:voir_tout:></a></p>
-    ]
 </section>
