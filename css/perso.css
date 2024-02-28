@@ -31,6 +31,7 @@ nav.arbo {
     }
 
     .sqq-rubrique .main h1,
+    .sqq-evenement .titre,
     .sqq-article .main h1 {
         font-size: 2em;
     }
@@ -42,6 +43,7 @@ nav.arbo {
     }
 
     .sqq-rubrique .main h1,
+    .sqq-evenement .titre,
     .sqq-article .main h1 {
         font-size: 1.8em;
     }
@@ -53,6 +55,7 @@ nav.arbo {
     }
 
     .sqq-rubrique .main h1,
+    .sqq-evenement .titre,
     .sqq-article .main h1 {
         font-size: 1.4em;
     }

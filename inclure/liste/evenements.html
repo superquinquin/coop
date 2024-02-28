@@ -1,0 +1,39 @@
+<section id="agenda">
+    <header class="major">
+        <h2>[(#CONFIG{agenda/titre}|sinon{<:agenda:titre_sur_l_agenda:>}|typo)]</h2>
+    </header>
+    [(#ENV{archives}|!={oui}|?{
+    [(#SET{date_debut,#DATE})][(#SET{date_fin,[(#VAL{Y-m-d H:i:s}|date{#VAL{"+2 years"}|strtotime})]})][(#SET{sens_tri,0})]
+    ,
+    [(#SET{date_debut,[(#VAL{Y-m-d H:i:s}|date{#VAL{"-10 years"}|strtotime})]})][(#SET{date_fin,#DATE})][(#SET{sens_tri,-1})]
+    })]
+    <div id="agenda-liste" class="liste evenements">
+        <B_agenda>
+            [(#ENV{accueil}|!={oui}|oui)	#ANCRE_PAGINATION ]
+            <div class="liste-items posts">
+                <BOUCLE_agenda(EVENEMENTS)
+                {!evenement_passe #GET{date_debut}}
+                {!evenement_a_venir #GET{date_fin}}
+                {tri date_debut} {inverse #GET{sens_tri}}
+                {id_article?} {0, #ENV{nb, 999999}}
+                {pagination #ENV{pagination,12}}>
+                <INCLURE{fond=inclure/resume/evenement,id_evenement,env} />
+                </BOUCLE_agenda>
+            </div>
+            [<nav class="pagination">(#PAGINATION)</nav>]
+        </B_agenda>
+        <p class="aucun-resultat"><:agenda:info_aucun_evenement:></p>
+    <//B_agenda>
+    [(#ENV{accueil}|!={oui}|oui)
+    <p class="boutons">
+        [(#ENV{archives}|!={oui}|?{
+        <a href="[(#SELF|parametre_url{archives,oui})]" class="ajax button"><span><:html5up:evenements_a_venir:></span></a>
+        ,
+        <a href="[(#SELF|parametre_url{archives,''})]" class="ajax button"><span><:html5up:evenements_passes:></span></a>
+        })]
+    </p>]
+    </div>
+    [(#ENV{accueil}|=={oui}|oui)
+    <p class="boutons"><a href="#URL_PAGE{evenements}" class="button primary"><:html5up:voir_tout:></a></p>
+    ]
+</section>

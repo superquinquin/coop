@@ -1,0 +1,29 @@
+<BOUCLE_evenement(EVENEMENTS){id_evenement}>
+[(#SET{annee,#DATE_DEBUT|annee})][(#SET{mois,#DATE_DEBUT|nom_mois})][(#SET{jour,#DATE_DEBUT|jour})]
+<section itemscope itemtype="http://schema.org/Event" class="sqq-evenement">
+    <meta itemprop="startDate" content="[(#DATE_DEBUT|affdate{Y-m-d})]T[(#DATE_DEBUT|affdate{H:i:sO})]" />
+    <meta itemprop="endDate" content="[(#DATE_FIN|affdate{Y-m-d})]T[(#DATE_FIN|affdate{H:i:sO})]" />
+    <header class="main">
+        [<h1 class="titre #EDIT{titre}" itemprop="name">(#TITRE)</h1>]
+        [<p class="soustitre">(#DATE_DEBUT|agenda_affdate_debut_fin{#DATE_FIN,#HORAIRE*})</p>]
+    </header>
+
+    [<div class="image main visuel_entete">
+    (#LOGO_EVENEMENT|html5up_image_reduire{1310,425})
+</div>]
+
+    [<div class="texte #EDIT{descriptif}" itemprop="description">(#DESCRIPTIF|image_reduire{1270})</div>]
+
+    [(#LIEU|ou{#ADRESSE}|oui)
+    <aside class="location box">
+        <h2><:agenda:evenement_lieu:></h2>
+        [<p itemprop="location"><span class="lieu #EDIT{lieu}">(#LIEU)</span>[
+        <br /><span class="adresse #EDIT{adresse}">(#ADRESSE|PtoBR)</span>]</p>]
+    </aside>]
+
+    [<div class="notes">(#NOTES)</div>]
+
+    <INCLURE{fond=inclure/documents, id_evenement} />
+
+</section>
+</BOUCLE_evenement>
